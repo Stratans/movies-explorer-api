@@ -10,11 +10,11 @@ const validationUpdateProfile = celebrate({
 
 const validationCreateMovie = celebrate({
   body: Joi.object().keys({
-    country: Joi.string().required().min(3).max(30),
-    director: Joi.string().required().min(3).max(30),
+    country: Joi.string().required().min(3).max(100),
+    director: Joi.string().required().min(3).max(100),
     duration: Joi.number().required(),
     year: Joi.string().required(),
-    description: Joi.string().required().min(3).max(100),
+    description: Joi.string().required().min(3).max(10000),
     image: Joi.string().required().regex(REG_URL),
     trailerLink: Joi.string().required().regex(REG_URL),
     thumbnail: Joi.string().required().regex(REG_URL),
